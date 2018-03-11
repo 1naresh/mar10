@@ -9,9 +9,9 @@ function sizeController($scope,$state,dataService,$window){
     $scope.goNext=true;
     $scope.warning=false;
     function calculate(){
-        var wallA=$scope.wallA
-        var wallB=$scope.wallB
-        var wallC=$scope.wallC
+        var wallA=Math.floor($scope.wallA/12)
+        var wallB=Math.floor($scope.wallB/12)
+        var wallC=Math.floor($scope.wallC/12)
         if(wallA+wallB+wallC <= 5 && wallA+wallB+wallC > 0){
             amount+=(wallA+wallB+wallC)*100
             $scope.goNext=true
