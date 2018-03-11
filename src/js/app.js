@@ -51,7 +51,7 @@ function config($stateProvider,$urlRouterProvider){
         }
     })
     .state({
-        name:'parallelShape',
+        name:'parallelShape', 
         url:'/parallelShape',
         views:{
             'main':{
