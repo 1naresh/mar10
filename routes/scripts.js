@@ -1,0 +1,39 @@
+var express=require('express')
+var fs=require('fs')
+var router=express.Router();
+router.get('/homeController.js',function(req,res){
+    fs.readFile('src/js/controllers/homeController.js','utf8',function(err,data){
+        res.send(data)
+    })
+})
+router.get('/productsController.js',function(req,res){
+    fs.readFile('src/js/controllers/productsController.js','utf8',function(err,data){
+        res.send(data)
+    })
+})
+router.get('/shapeController.js',function(req,res){
+    fs.readFile('src/js/controllers/shapeController.js','utf8',function(err,data){
+        res.send(data)
+    })
+})
+router.get('/sizeController.js',function(req,res){
+    fs.readFile('src/js/controllers/sizeController.js','utf8',function(err,data){
+        res.send(data)
+    })
+})
+router.get('/registerController.js',function(req,res){
+    fs.readFile('src/js/controllers/registerController.js','utf8',function(err,data){
+        res.send(data)
+    })
+})
+router.get('/finalController.js',function(req,res){
+    fs.readFile('src/js/controllers/finalController.js','utf8',function(err,data){
+        res.send(data)
+    })
+})
+router.get('/dataService.js',function(req,res){
+    fs.readFile('src/js/dataService.js','utf8',function(err,data){
+        res.send(data)
+    })
+})
+module.exports=router;
