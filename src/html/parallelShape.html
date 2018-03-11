@@ -1,0 +1,7 @@
+<h3>What is the size of your kitchen?</h3>
+<input type="range" min="0" max="20" ng-model="wallA">{{wallA}}<br>
+<input type="range" min="0" max="20" ng-model="wallB">{{wallB}}<br>
+<P ng-if="wallA+wallB<5">{{(wallA+wallB)*100}}</P>
+<P ng-if="wallA+wallB>=5">{{500+((wallA+wallB-5)*200)}}</P>
+<p ng-if="warning">enter values</p>
+<button type="button" ng-click="toRegister()" class="btn">next</button>
