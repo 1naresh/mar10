@@ -11,7 +11,7 @@ mongoose.Promise=global.Promise;
 mongoose.connect('mongodb://localhost/test')
 
 app.get('/index',function(req,res){
-    fs.readFile('src/html/index.html','utf8',function(err,data){
+    fs.readFile('src/index.html','utf8',function(err,data){
         res.send(data)
     })
 })
