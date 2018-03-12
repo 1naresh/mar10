@@ -1,4 +1,4 @@
-<h3>What is the size of your kitchen?</h3>
+<h3> {{heading}}</h3>
 <input type="range" min="0" max="240" ng-model="wallA" class="wall">{{Math.floor(wallA/12)}}fts{{wallA%12}}inches <br>
 <P ng-if="Math.floor(wallA/12) <= 5">{{Math.floor(wallA/12) * 100}}</P>
 <P ng-if="Math.floor(wallA/12) > 5">{{500+((Math.floor(wallA/12)-5)*200)}}</P>

@@ -1,18 +1,16 @@
 angular.module('app').controller('productsController',productsController)
-function productsController($scope,$state,dataService,$document){
-    var products=[]
+function productsController($scope,$state,dataService,$document,$stateParams){
+    var products=['kitchen']
     $scope.kitchenImg=true;    
-    $scope.toEstimate2=function(){
-        if($scope.kitchen){
-            products.push('kitchen')
-        }
+    $scope.toShape=function(){
         if($scope.wardrobe){
             products.push('wardrobe')
         }
         if($scope.fulllInteriors){
             products.push('fulllInteriors')
         }
-        dataService.addProducts(products)
+        // dataService.addProducts(products)
+        dataService.user.products=products
         $state.go('shapes')
     }
     $scope.over=function(product){
@@ -21,9 +19,9 @@ function productsController($scope,$state,dataService,$document){
             $scope.kitchenImg=false;
             $scope.wardrobeImg=true
         }
-        else if(product=='fulllInteriors'){
+        if(product=='fulllInteriors'){
             $scope.kitchenImg=false;
-            $scope.fulllInteriors=true 
+            $scope.fulllInteriorsImg=true 
         }
     }
     $scope.leave=function(product){        
@@ -32,10 +30,10 @@ function productsController($scope,$state,dataService,$document){
             $scope.wardrobeImg=false
             $scope.kitchenImg=true;
         }
-        else if(product=='fulllInteriors'){
-            $scope.fulllInteriors=false;
+        if(product=='fulllInteriors'){
+            $scope.fulllInteriorsImg=false;
             $scope.kitchenImg=true;
         }
     } 
 }
-productsController.$inject=['$scope','$state','dataService','$document']
+productsController.$inject=['$scope','$state','dataService','$document','$stateParams']

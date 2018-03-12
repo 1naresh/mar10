@@ -1,14 +1,6 @@
 angular.module('app').factory('dataService',dataService)
 function dataService($q,$http){
     var user={}
-    var addProducts=function(products){
-        user.products=products
-        // console.log(user)
-    }
-    var addAmount=function(amount){
-        user.amount=amount
-        // console.log(user)
-    }
     var addDetails=function(User){
         user.name=User.name
         user.email=User.email
@@ -35,10 +27,9 @@ function dataService($q,$http){
         return defered.promise;
     }
     return{
-        addProducts:addProducts,
-        addAmount:addAmount,
         addDetails:addDetails,
-        getData,getData
+        getData:getData,
+        user:user
     }
 }
 dataService.$inject=['$q','$http']
