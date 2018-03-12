@@ -4,6 +4,9 @@ function shapeController($scope,$state,dataService){
     $scope.continue=function(toState){
         $state.go(toState)
     }
+    $scope.back=function(){
+        $state.go('products')
+    }
     $scope.over=function(shape){
         if(shape == 'UShape'){
             $scope.isLShape=false

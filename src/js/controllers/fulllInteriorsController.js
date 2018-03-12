@@ -10,8 +10,16 @@ function fulllInteriorsController($scope,$state,dataService){
         if($scope.isCrockery){
             dataService.user.products.push('Crockery Unit')
         }
-        console.log(dataService.user.products)
+        
         $state.go('register')
+    }
+    $scope.back=function(){
+        console.log(dataService.user.products)
+        if(dataService.user.products.indexOf('wardrobe') == 1){
+            $state.go('wordrobes')
+        }else{
+            $state.go('shapes')
+        }
     }
 }
 fulllInteriorsController.$inject=['$scope','$state','dataService']

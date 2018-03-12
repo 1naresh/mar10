@@ -11,5 +11,8 @@ function wordrobesController($scope,$state,dataService){
             $state.go('tripleBed')
         }
     }
+    $scope.back=function(){
+        $state.go('shapes')
+    }
 }
 wordrobesController.$inject=['$scope','$state','dataService']

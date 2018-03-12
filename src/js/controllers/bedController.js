@@ -40,7 +40,7 @@ function bedController($scope,$window,dataService,$state){
     $scope.toRegister=function(){
         calculate()
         if($scope.goNext){
-            if(dataService.user.products.indexOf('fulllInteriors') == 1){
+            if(dataService.user.products.indexOf('fulllInteriors') == 2){
                 $state.go('fulllInteriors')
             }else{
                 $state.go('register')

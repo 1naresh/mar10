@@ -13,6 +13,9 @@ function productsController($scope,$state,dataService,$document,$stateParams){
         dataService.user.products=products
         $state.go('shapes')
     }
+    $scope.back=function(){
+        $state.go('home')
+    }
     $scope.over=function(product){
         $document[0].getElementById(product).style.background='red'
         if(product=='wardrobe'){
