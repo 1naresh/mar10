@@ -20,7 +20,6 @@ router.post('/save',function(req,res){
 })
 router.get('/getByPhone/:phone', function (req, res, next) {
     customer.findOne({ phone: req.params.phone }, function (err, data) {
-        console.log(data)
         res.send(data);
     });
 });

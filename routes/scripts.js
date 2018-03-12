@@ -16,8 +16,23 @@ router.get('/shapeController.js',function(req,res){
         res.send(data)
     })
 })
-router.get('/sizeController.js',function(req,res){
-    fs.readFile('src/js/controllers/sizeController.js','utf8',function(err,data){
+router.get('/kitchenController.js',function(req,res){
+    fs.readFile('src/js/controllers/kitchenController.js','utf8',function(err,data){
+        res.send(data)
+    })
+})
+router.get('/wordrobesController.js',function(req,res){
+    fs.readFile('src/js/controllers/wordrobesController.js','utf8',function(err,data){
+        res.send(data)
+    })
+})
+router.get('/bedController.js',function(req,res){
+    fs.readFile('src/js/controllers/bedController.js','utf8',function(err,data){
+        res.send(data)
+    })
+})
+router.get('/fulllInteriorsController.js',function(req,res){
+    fs.readFile('src/js/controllers/fulllInteriorsController.js','utf8',function(err,data){
         res.send(data)
     })
 })

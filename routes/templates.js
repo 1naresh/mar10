@@ -36,6 +36,16 @@ router.get('/straightShape.html',function(req,res){
         res.send(data)
     })
 })
+router.get('/wordrobes.html',function(req,res){
+    fs.readFile('src/html/wordrobes.html','utf8',function(err,data){
+        res.send(data)
+    })
+})
+router.get('/fulllInteriors.html',function(req,res){
+    fs.readFile('src/html/fulllInteriors.html','utf8',function(err,data){
+        res.send(data)
+    })
+})
 router.get('/register.html',function(req,res){
     fs.readFile('src/html/register.html','utf8',function(err,data){
         res.send(data)
