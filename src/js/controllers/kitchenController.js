@@ -1,5 +1,6 @@
 angular.module('app').controller('kitchenController',kitchenController)
 function kitchenController($scope,$state,dataService,$window){
+    var user=dataService.user
     $scope.heading='What is the size of your kitchen?'
     $scope.Math = $window.Math;
     var amount=0;
@@ -38,8 +39,11 @@ function kitchenController($scope,$state,dataService,$window){
                 $scope.warning=true;
             }
         }
-        dataService.user.amount=amount
-        dataService.user.kitchenSize=size
+        user.amount=amount
+        user.kitchenSize=size
+        user.kitchenwallA=wallA;
+        user.kitchenwallB=wallB;
+        user.kitchenwallC=wallC;
     }
     $scope.toRegister=function(){
         calculate()

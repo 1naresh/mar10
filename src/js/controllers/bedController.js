@@ -41,6 +41,9 @@ function bedController($scope,$window,dataService,$state){
         }
         user.amount += amount;
         user.bedRoomSize=size
+        user.bedwallA=wallA
+        user.bedwallB=wallB
+        user.bedwallC=wallC
     }
     $scope.toRegister=function(){
         calculate()

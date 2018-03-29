@@ -36,6 +36,16 @@ function registerController($scope,$state,dataService){
         //     dataService.addDetails({name:name,email:email,phone:phone,city:city})
         //     $state.go('final')
         // }
+        dataService.getAll().then(function(res){
+            var phones=[]
+            var emails=[]
+            res.data.map( function(User){
+                phones.push(User.phone)
+                emails.push(User.email)
+                $scope.e=phones
+                $scope.p=emails
+            })
+        })
         dataService.addDetails({name:name,email:email,phone:phone,city:city})
         $state.go('final')
     } 

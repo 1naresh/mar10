@@ -18,7 +18,7 @@ function bedroomSheetsController($scope,$window,dataService,$state){
     }
     $scope.toRegister=function(){
         if(user.bedroomCost1 && user.bedroomCost2){
-            if(user.products.indexOf('fulllInteriors') == 1){
+            if(user.products.indexOf('fulllInteriors') == 2){
                 $state.go('fulllInteriors')
             }else{
                 $state.go('register')

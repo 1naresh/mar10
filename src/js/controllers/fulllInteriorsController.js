@@ -1,17 +1,19 @@
 angular.module('app').controller('fulllInteriorsController',fulllInteriorsController)
 function fulllInteriorsController($scope,$state,dataService){
+    var user= dataService.user;
+    var interiors=[]
     $scope.toRegister=function(){
         if($scope.isEntertainment){
-            dataService.user.products.push('Entertainment Unit')
+            interiors.push('Entertainment Unit')
         }
         if($scope.isStudy){
-            dataService.user.products.push('Study Unit')
+            interiors.push('Study Unit')
         }
         if($scope.isCrockery){
-            dataService.user.products.push('Crockery Unit')
+            interiors.push('Crockery Unit')
         }
-        
-        $state.go('register')
+        user.interiors=interiors
+        $state.go('register') 
     }
     $scope.back=function(){
         console.log(dataService.user.products)
