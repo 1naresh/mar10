@@ -65,7 +65,29 @@ function config($stateProvider,$urlRouterProvider){
                               controller:'fulllInteriorsController'
                           }
                       }
-                  })      
+                  })
+                  .state({
+                    name:'kitchenSheets',
+                    url:'/kitchenSheets',
+                    views:{
+                        'main':{
+                            templateUrl:'http://localhost:100/templates/sheets.html',
+                            controller:"kitchenSheetsController"
+                            
+                        }
+                    }
+                })     
+                .state({
+                    name:'bedroomSheets',
+                    url:'/bedroomSheets',
+                    views:{
+                        'main':{
+                            templateUrl:'http://localhost:100/templates/sheets.html',
+                            controller:"bedroomSheetsController"
+                            
+                        }
+                    }
+                })   
     $urlRouterProvider.otherwise('/home')
 }
 config.$inject=['$stateProvider','$urlRouterProvider']

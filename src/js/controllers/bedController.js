@@ -1,8 +1,10 @@
 angular.module('app').controller('bedController',bedController)
 function bedController($scope,$window,dataService,$state){
+    var user=dataService.user
     $scope.Math = $window.Math;
     $scope.heading='My wardrobe length(s) are'
     var amount=0
+    var size=0
     $scope.wallA=0
     $scope.wallB=0
     $scope.wallC=0
@@ -14,9 +16,11 @@ function bedController($scope,$window,dataService,$state){
         var wallC=Math.floor($scope.wallC/12)
         if(wallA+wallB+wallC <= 5 && wallA+wallB+wallC > 0){
             amount+=(wallA+wallB+wallC)*100
+            size=wallA+wallB+wallC
             $scope.goNext=true
         }else if(wallA+wallB+wallC > 5){
             amount+=500+((wallA+wallB+wallC-5)*200)
+            size=wallA+wallB+wallC
             $scope.goNext=true
         }
         if($state.current.name == 'doubleBed'){
@@ -35,16 +39,18 @@ function bedController($scope,$window,dataService,$state){
                 $scope.warning=true;
             }
         }
-        dataService.user.amount += amount;
+        user.amount += amount;
+        user.bedRoomSize=size
     }
     $scope.toRegister=function(){
         calculate()
         if($scope.goNext){
-            if(dataService.user.products.indexOf('fulllInteriors') == 2){
-                $state.go('fulllInteriors')
-            }else{
-                $state.go('register')
-            }            
+            // if(dataService.user.products.indexOf('fulllInteriors') == 2){
+            //     $state.go('fulllInteriors')
+            // }else{
+            //     $state.go('register')
+            // }      
+            $state.go('bedroomSheets')
         }        
     }
 }

@@ -10,34 +10,34 @@ function registerController($scope,$state,dataService){
         var email=$scope.email
         var phone=$scope.phone
         var city=$scope.city
-        console.log(email)
-        if(name == undefined || name.length < 6 || name.length >15){
-            $scope.nameErr=true;
-        }else{
-            $scope.nameErr=false;
-        }
-        if(email != undefined){
-            var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-            $scope.emailErr=!expr.test(email)
-        }else{            
-            $scope.emailErr=true
-        }
+        // if(name == undefined || name.length < 6 || name.length >15){
+        //     $scope.nameErr=true;
+        // }else{
+        //     $scope.nameErr=false; 
+        // }
+        // if(email != undefined){
+        //     var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        //     $scope.emailErr=!expr.test(email)
+        // }else{            
+        //     $scope.emailErr=true
+        // }
         
-        if( phone == undefined || phone.length < 8 || phone.length >15){
-            $scope.phoneErr=true;
-        }else{
-            $scope.phoneErr=false;
-        }
-        if(city == undefined){
-            $scope.cityErr=true;
-        }else{
-            $scope.cityErr=false;
-        }
-        if( !$scope.nameErr && !$scope.emailErr && !$scope.phoneErr || !$scope.cityErr){
-            dataService.addDetails({name:name,email:email,phone:phone,city:city})
-            $state.go('final')
-        }
-        
+        // if( phone == undefined || phone.length < 8 || phone.length >15){
+        //     $scope.phoneErr=true;
+        // }else{
+        //     $scope.phoneErr=false;
+        // }
+        // if(city == undefined){
+        //     $scope.cityErr=true;
+        // }else{
+        //     $scope.cityErr=false;
+        // }
+        // if( !$scope.nameErr && !$scope.emailErr && !$scope.phoneErr || !$scope.cityErr){
+        //     dataService.addDetails({name:name,email:email,phone:phone,city:city})
+        //     $state.go('final')
+        // }
+        dataService.addDetails({name:name,email:email,phone:phone,city:city})
+        $state.go('final')
     } 
     $scope.back=function(){
         console.log(dataService.user.products.indexOf('fulllInteriors'))

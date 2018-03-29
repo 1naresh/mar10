@@ -7,24 +7,25 @@ function dataService($q,$http){
         user.phone=User.phone
         user.city=User.city
         console.log(user)
-        var defered=$q.defer()
-        $http({
-            method:'post',
-            url:'http://localhost:100/data/save',
-            data:angular.toJson(user)
-        })
+        // var defered=$q.defer()
+        // $http({
+        //     method:'post',
+        //     url:'http://localhost:100/data/save',
+        //     data:angular.toJson(user)
+        // })
     }
     var getData=function(){
-        var defered=$q.defer()
-        $http({
-            method:'get',
-            url:'http://localhost:100/data/getByPhone/'+user.phone
-        }).then(function(positiveRes){
-            defered.resolve(positiveRes)
-        },function(negativeRes){
-            defered.reject(negativeRes)
-        })
-        return defered.promise;
+        // var defered=$q.defer()
+        // $http({
+        //     method:'get',
+        //     url:'http://localhost:100/data/getByPhone/'+user.phone
+        // }).then(function(positiveRes){
+        //     defered.resolve(positiveRes)
+        // },function(negativeRes){
+        //     defered.reject(negativeRes)
+        // })
+        // return defered.promise;
+        return user
     }
     return{
         addDetails:addDetails,

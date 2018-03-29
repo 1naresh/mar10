@@ -1,10 +1,9 @@
 angular.module('app').controller('kitchenController',kitchenController)
 function kitchenController($scope,$state,dataService,$window){
-    // console.log(dataService.user.products.indexOf('wardrobe'))
-    console.log()
     $scope.heading='What is the size of your kitchen?'
     $scope.Math = $window.Math;
-    var amount=0
+    var amount=0;
+    var size=0;
     $scope.wallA=0
     $scope.wallB=0
     $scope.wallC=0
@@ -15,9 +14,11 @@ function kitchenController($scope,$state,dataService,$window){
         var wallB=Math.floor($scope.wallB/12)
         var wallC=Math.floor($scope.wallC/12)
         if(wallA+wallB+wallC <= 5 && wallA+wallB+wallC > 0){
+            size=wallA+wallB+wallC
             amount+=(wallA+wallB+wallC)*100
             $scope.goNext=true
         }else if(wallA+wallB+wallC > 5){
+            size=wallA+wallB+wallC
             amount+=500+((wallA+wallB+wallC-5)*200)
             $scope.goNext=true
         }
@@ -38,18 +39,19 @@ function kitchenController($scope,$state,dataService,$window){
             }
         }
         dataService.user.amount=amount
+        dataService.user.kitchenSize=size
     }
     $scope.toRegister=function(){
         calculate()
         if($scope.goNext){
-            if(dataService.user.products.indexOf('wardrobe') == 1){
-                $state.go('wordrobes')
-            }else if(dataService.user.products.indexOf('fulllInteriors') == 1){
-                $state.go('fulllInteriors')
-            }else{
-                $state.go('register')
-            }
-
+            // if(dataService.user.products.indexOf('wardrobe') == 1){
+            //     $state.go('wordrobes')
+            // }else if(dataService.user.products.indexOf('fulllInteriors') == 1){
+            //     $state.go('fulllInteriors')
+            // }else{
+            //     $state.go('register')
+            // }
+            $state.go('kitchenSheets') 
         }        
     }
 } 

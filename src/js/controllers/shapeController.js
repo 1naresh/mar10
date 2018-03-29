@@ -1,8 +1,10 @@
 angular.module('app').controller('shapeController',shapeController)
 function shapeController($scope,$state,dataService){
+    var user=dataService.user
     $scope.isLShape=true
     $scope.continue=function(toState){
-        $state.go(toState)
+        user.kitchenShape=toState
+        $state.go(toState) 
     }
     $scope.back=function(){
         $state.go('products')

@@ -15,3 +15,15 @@
 .wall{
     width: 200px;
 }
+.btns-group button{
+    margin: 20px;
+}
+.btns-group li{
+    float: left;
+}
+.btns-group ul{
+    list-style-type: none;
+}
+.result span{
+    margin-left: 250px;
+}

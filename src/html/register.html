@@ -2,19 +2,19 @@
  
 <form ng-submit="submitForm()" name="userForm" class="form-group" novalidate>
     <label>name:
-        <input type="text" class="form-control" ng-model="name" ng-minlength="6" required >
+        <input type="text" class="form-control" ng-model="name">
         <p ng-if="nameErr">name length should be 6 to 15 letters</p>
     </label><br>
     <label>email:
-        <input type="text" class="form-control" ng-model="email"  required>
+        <input type="text" class="form-control" ng-model="email">
         <p ng-if="emailErr">enter  valid email</p>
     </label><br>
     <label>mobile number:
-        <input type="text" class="form-control" ng-model="phone" ng-maxlength="10" required>
+        <input type="text" class="form-control" ng-model="phone" >
         <p ng-if="phoneErr">phone should be 8 to 15 digits</p>
     </label><br>
     <label>select city:
-        <select class="form-control" ng-model="city" required>
+        <select class="form-control" ng-model="city" >
             <option ng-repeat="x in cities" value="{{x}}">{{x}}</option>
         </select>
         <p ng-if="cityErr">please select city</p>
