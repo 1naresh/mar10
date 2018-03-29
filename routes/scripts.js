@@ -26,11 +26,22 @@ router.get('/wordrobesController.js',function(req,res){
         res.send(data)
     })
 })
+router.get('/kitchenSheetsController.js',function(req,res){
+    fs.readFile('src/js/controllers/kitchenSheetsController.js','utf8',function(err,data){
+        res.send(data)
+    })
+})
 router.get('/bedController.js',function(req,res){
     fs.readFile('src/js/controllers/bedController.js','utf8',function(err,data){
         res.send(data)
     })
 })
+router.get('/bedroomSheetsController.js',function(req,res){
+    fs.readFile('src/js/controllers/bedroomSheetsController.js','utf8',function(err,data){
+        res.send(data)
+    })
+})
+
 router.get('/fulllInteriorsController.js',function(req,res){
     fs.readFile('src/js/controllers/fulllInteriorsController.js','utf8',function(err,data){
         res.send(data)

@@ -36,6 +36,11 @@ router.get('/straightShape.html',function(req,res){
         res.send(data)
     })
 })
+router.get('/sheets.html',function(req,res){
+    fs.readFile('src/html/sheets.html','utf8',function(err,data){
+        res.send(data)
+    })
+})
 router.get('/wordrobes.html',function(req,res){
     fs.readFile('src/html/wordrobes.html','utf8',function(err,data){
         res.send(data)
