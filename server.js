@@ -1,14 +1,14 @@
 var express=require('express')
 var fs=require('fs')
 var bodyParser=require('body-parser')
-// var mongoose=require('mongoose')
-// var data=require('./routes/data')
+var mongoose=require('mongoose')
+var data=require('./routes/data')
 var scripts=require('./routes/scripts')
 var templates=require('./routes/templates')
 var app=express();
 
-// mongoose.Promise=global.Promise;
-// mongoose.connect('mongodb://localhost/test')
+mongoose.Promise=global.Promise;
+mongoose.connect('mongodb://localhost/test')
 
 app.get('/index',function(req,res){
     fs.readFile('src/index.html','utf8',function(err,data){
@@ -27,7 +27,7 @@ app.get('/app.js',function(req,res){
 })
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use('/data',data)
+app.use('/data',data)
 app.use('/js',scripts)
 app.use('/templates',templates)
 app.listen(100,function(){
